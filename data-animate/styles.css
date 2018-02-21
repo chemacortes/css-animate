@@ -1,0 +1,76 @@
+/* Inicialización CSS*/
+
+body, html {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  color: #fff;
+  padding: 0;
+  margin: 0;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+  background: #000;
+}
+
+/* Artículos y elementos animados */
+
+article {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  padding-top: 1em;
+  overflow: auto;
+}
+
+
+article [data-animate] {
+  position: absolute;
+  transition: left 1s, top 1s, right 1s, bottom 1s;
+  left: -100vw;
+}
+
+/* Animación textos */
+
+#p1:target [data-animate="textItem"] {
+  left: 10vw;
+  top: 20vh;
+  color: #fff;
+}
+
+#p1 [data-animate="pictureItem"] {
+  left: unset;
+  right: -100vw;
+}
+
+#p1:target [data-animate="pictureItem"] {
+  right: 50vw;
+  display: block;
+  width: 20vw;
+  height: 20vw;
+  background: blue;
+}
+
+#p2:target [data-animate="textItem"] {
+  left: 20vw;
+  top: 40vh;
+  color: green;
+}
+
+#p2 [data-animate="pictureItem"] {
+  left: unset;
+  right: -100vw;
+}
+
+#p2:target [data-animate="pictureItem"] {
+  right: 20vw;
+  display: block;
+  width: 20vw;
+  height: 10vw;
+  background: red;
+}
